@@ -8,10 +8,13 @@ var startBtn = document.querySelector("#startquiz");
 var timerEl = document.getElementById('countdown');
 
 
-// To hide all HTML elements
-window.onload = function() {
-   document.getElementById("hide").style.display = 'none';
-}
+
+
+
+// // To hide all HTML elements
+// window.onload = function() {
+//    document.getElementById("hide").style.display = 'none';
+// }
 
 
 
@@ -56,6 +59,8 @@ function displayMessage() {
 // When clicking start quiz button, calls countdown function
 startquiz.addEventListener("click", function () {
     countdown();
+    var welcome = document.getElementById("welcome");
+    welcome.style.display = "none";
 })
 
 
