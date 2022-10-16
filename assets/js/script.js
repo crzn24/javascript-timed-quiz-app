@@ -1,13 +1,17 @@
 // Hook to UI
-var startBtn = document.querySelector("#startquiz")
+var startBtn = document.querySelector("#startquiz");
 
 
 
 
-
+// Visible timer
 var timerEl = document.getElementById('countdown');
 
 
+// To hide all HTML elements
+window.onload = function() {
+   document.getElementById("hide").style.display = 'none';
+}
 
 
 
