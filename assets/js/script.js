@@ -27,13 +27,12 @@ function countdown() {
 
             timerEl.textContent = "";
         }
-
     }, 1000);
 }
 
 
 
-
+// When clicking start quiz button, calls countdown function
 startquiz.addEventListener("click", function () {
     countdown();
 })
