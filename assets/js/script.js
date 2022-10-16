@@ -1,3 +1,10 @@
+// Hook to UI
+var startBtn = document.querySelector("#startquiz")
+
+
+
+
+
 var timerEl = document.getElementById('countdown');
 
 
@@ -7,7 +14,7 @@ var timerEl = document.getElementById('countdown');
 
 
 
-
+// Countdown timer funtion
 function countdown() {
     var timeLeft = 75;
     var timeInterval = setInterval(function () {
@@ -27,8 +34,11 @@ function countdown() {
 
 
 
+startquiz.addEventListener("click", function () {
+    countdown();
+})
 
-countdown()
+
 
 
 
