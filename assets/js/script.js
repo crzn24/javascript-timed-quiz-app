@@ -3,20 +3,8 @@ var startBtn = document.querySelector("#startquiz");
 
 
 
-
 // Visible timer
 var timerEl = document.getElementById('countdown');
-
-
-
-
-
-// // To hide all HTML elements
-// window.onload = function() {
-//    document.getElementById("hide").style.display = 'none';
-// }
-
-
 
 
 
@@ -44,19 +32,10 @@ function displayMessage() {
     endscreen.style.display = "block";
 }
 
-// if (endscreen.style.display === "none") {
-//     endscreen.style.display = "block";
-// } else {
-//     endscreen.style.display = "none";
-// }
 
 
 
-
-
-
-
-// When clicking start quiz button, calls countdown function
+// When clicking start quiz button, calls countdown function, makes welcome screen disappear
 startquiz.addEventListener("click", function () {
     countdown();
     var welcome = document.getElementById("welcome");
