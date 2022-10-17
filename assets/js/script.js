@@ -14,6 +14,10 @@ var q3 = document.getElementById("question3");
 var q4 = document.getElementById("question4");
 var q5 = document.getElementById("question5");
 
+// Correct Buttons
+var q1yes = document.getElementById("q1correct")
+
+
 // Countdown timer funtion
 function countdown() {
     var timeLeft = 5;
@@ -49,7 +53,10 @@ startquiz.addEventListener("click", function () {
 
     
     q1.style.display = "block";
-    if (q1)
+
+    if (q1correct.addEventListener("click", function () {
+        document.getElementById("status").innerHTML = "Correct!";
+    }));
 
 
 })
