@@ -56,7 +56,6 @@ startquiz.addEventListener("click", function () {
     if (q1yes.addEventListener("click", function () {
         document.getElementById("status").innerHTML = "Correct!";
     } 
-   
     ));
 
 
