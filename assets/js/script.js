@@ -14,9 +14,9 @@ var q3 = document.getElementById("question3");
 var q4 = document.getElementById("question4");
 var q5 = document.getElementById("question5");
 
-// Correct Buttons
-var q1yes = document.getElementById("q1correct")
-
+// Question 1 Buttons
+var q1yes = document.getElementById("q1correct");
+var q1no = document.getElementById("q1incorrect");
 
 // Countdown timer funtion
 function countdown() {
@@ -26,7 +26,7 @@ function countdown() {
         timerEl.textContent = "Time: " + timeLeft;
 
         if (timeLeft === 0) {
-            clearInterval(timeInterval)
+            clearInterval(timeInterval);
             displayMessage();
         }
     }, 1000);
@@ -53,10 +53,11 @@ startquiz.addEventListener("click", function () {
 
     
     q1.style.display = "block";
-
-    if (q1correct.addEventListener("click", function () {
+    if (q1yes.addEventListener("click", function () {
         document.getElementById("status").innerHTML = "Correct!";
-    }));
+    } 
+   
+    ));
 
 
 })
