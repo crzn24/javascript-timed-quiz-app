@@ -7,7 +7,12 @@ var startBtn = document.querySelector("#startquiz");
 var timerEl = document.getElementById('countdown');
 
 
-
+// Questions
+var q1 = document.getElementById("question1");
+var q2 = document.getElementById("question2");
+var q3 = document.getElementById("question3");
+var q4 = document.getElementById("question4");
+var q5 = document.getElementById("question5");
 
 // Countdown timer funtion
 function countdown() {
@@ -41,7 +46,11 @@ startquiz.addEventListener("click", function () {
     var welcome = document.getElementById("welcome");
     welcome.style.display = "none";
 
-    // var q1 = 
+
+    
+    q1.style.display = "block";
+
+
 })
 
 
