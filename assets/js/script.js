@@ -49,6 +49,7 @@ startquiz.addEventListener("click", function () {
 
     
     q1.style.display = "block";
+    if (q1)
 
 
 })
