@@ -40,6 +40,8 @@ startquiz.addEventListener("click", function () {
     countdown();
     var welcome = document.getElementById("welcome");
     welcome.style.display = "none";
+
+    // var q1 = 
 })
 
 
