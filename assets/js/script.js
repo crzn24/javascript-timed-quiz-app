@@ -20,7 +20,7 @@ var q1no = document.getElementById("q1incorrect");
 
 // Countdown timer funtion
 function countdown() {
-    var timeLeft = 5;
+    var timeLeft = 20;
     var timeInterval = setInterval(function () {
         timeLeft--;
         timerEl.textContent = "Time: " + timeLeft;
@@ -57,6 +57,7 @@ startquiz.addEventListener("click", function () {
         document.getElementById("status").innerHTML = "Correct!";
     } 
     ));
+    
 
 
 })
