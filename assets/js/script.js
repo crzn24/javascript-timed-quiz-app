@@ -20,24 +20,24 @@ var questions = [
     answer:0 
     },
 
-    {question:"Question: Commonly used data types DO NOT include:", 
-    choices: ["alerts", "strings", "booleans", "numbers"],
-    answer:0 
+    {question:"The condition in an if / else statement is enclosed within ____.", 
+    choices: ["square brackets", "curly brackets", "parentheses", "quotes"],
+    answer:2 
     },
 
-    {question:"Question: Commonly used data types DO NOT include:", 
-    choices: ["alerts", "strings", "booleans", "numbers"],
-    answer:0 
+    {question:"Arrays in JavaScript can be used to store ____.", 
+    choices: ["booleans", "other arrays", "numbers and strings", "all of the above"],
+    answer:3 
     },
 
-    {question:"Question: Commonly used data types DO NOT include:", 
-    choices: ["alerts", "strings", "booleans", "numbers"],
-    answer:0 
+    {question:"String values must be enclosed within ____ when being assigned to variables.", 
+    choices: ["curly brackets", "commas", "quotes", "parentheses"],
+    answer:2 
     },
 
-    {question:"Question: Commonly used data types DO NOT include:", 
-    choices: ["alerts", "strings", "booleans", "numbers"],
-    answer:0 
+    {question:"A very useful tool used during development and debugging for printing content to the debugger is:", 
+    choices: ["terminal/bash", "console.log", "JavaScript", "for loops"],
+    answer:1 
     }
 ]
 
@@ -83,7 +83,7 @@ function displayQuestion() {
 function newQuestion() {
     const questionsLeft = questions[Math.floor(Math.random() * questions.length)];
     asking = questionsLeft
-    questionEl.innerHTML = 
+    questionEl.innerHTML = asking
 }
 
 
