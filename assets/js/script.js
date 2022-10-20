@@ -14,7 +14,7 @@ var q2 = document.getElementById("question2");
 var q3 = document.getElementById("question3");
 var q4 = document.getElementById("question4");
 var q5 = document.getElementById("question5");
-var questionArray = [q1, q2, q3, q4, q5];
+var questions = [q1, q2, q3, q4, q5];
 
 // Countdown timer funtion
 function countdown() {
@@ -32,6 +32,15 @@ function countdown() {
 
 
 
+///////// Display question function ///////////////
+
+
+function displayQuestion() {
+    var randomQuestion = Math.floor(Math.random()*questions.length);
+    randomQuestion.display = "block";
+}
+
+
 
 
 
@@ -42,41 +51,8 @@ startquiz.addEventListener("click", function () {
     var welcome = document.getElementById("welcome");
     welcome.style.display = "none";
     countdown();
-    q1.style.display = "block";
+    displayQuestion();
 })
-
-
-
-
-
-///////// Display question function ///////////////
-
-function 
-
-
-
-// // Iterate however many times
-// for (var i = 0; i < questionAmount; i++) {
-//     // Keep creating random numbers until the number is unique
-//     do {
-//       var randomQuestion = Math.floor(Math.random() * questions.length);
-//     } while (existingQuestions());
-  
-//     display.innerHTML += questions[randomQuestion] + '<br>';
-//     // Add the question to the tracker
-//     questionTracker.push(randomQuestion);
-//   }
-  
-//   // If the current random number already exists in the tracker, return true
-//   function existingQuestions() {
-//     for (var i = 0; i < questionTracker.length; i++) {
-//       if (questionTracker[i] === randomQuestion) {
-//         return true;
-//       }
-//     }
-//     return false;
-//   }
-
 
 
 
