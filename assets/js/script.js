@@ -15,11 +15,6 @@ var q3 = document.getElementById("question3");
 var q4 = document.getElementById("question4");
 var q5 = document.getElementById("question5");
 
-// Question 1 Buttons
-var q1yes = document.getElementById("q1correct");
-var q1no = document.getElementById("q1incorrect");
-
-
 
 // Countdown timer funtion
 function countdown() {
@@ -54,12 +49,12 @@ startquiz.addEventListener("click", function () {
 
 
 
-///////// Display question funtion ///////////////
+///////// Display question function ///////////////
 
 
 
 
-// Listens for clicks in question container
+// Listens for clicks in question 1 container
 questionContainer1.addEventListener("click", function(event) {
     var element = event.target;
   
@@ -80,6 +75,10 @@ questionContainer1.addEventListener("click", function(event) {
       }
     }
   });
+
+
+
+
 
 
 
