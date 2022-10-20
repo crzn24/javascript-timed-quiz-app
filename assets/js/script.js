@@ -2,10 +2,11 @@
 var startBtn = document.querySelector("#startquiz");
 var timerEl = document.getElementById('countdown');
 var score = document.querySelector("#finalscore");
-// var questionContainer1 = document.querySelector(".question-container1")
-var questionContainer = document.querySelector(".question-container")
-var questionEl = document.querySelector(".question")
-var choicesArea = document.querySelector(".choices-area")
+// var questionContainer1 = document.querySelector(".question-container1");
+var questionContainer = document.querySelector(".question-container");
+var questionEl = document.querySelector(".question");
+var choicesArea = document.querySelector(".choices-area");
+var choice = document.querySelector("#choice");
 
 
 
@@ -71,7 +72,7 @@ function countdown() {
 
 
 
-///////// Display question function ///////////////
+///////// Display question functions ///////////////
 
 
 function displayQuestion() {
