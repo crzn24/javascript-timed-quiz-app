@@ -2,19 +2,58 @@
 var startBtn = document.querySelector("#startquiz");
 var timerEl = document.getElementById('countdown');
 var score = document.querySelector("#finalscore");
-var questionContainer1 = document.querySelector(".question-container1")
+// var questionContainer1 = document.querySelector(".question-container1")
+var questionContainer = document.querySelector(".question-container")
+var questionEl = document.querySelector(".question")
+var choicesArea = document.querySelector(".choices-area")
 
 
-///////// State variables /////////////////
+
+
+///////// State variables? /////////////////
 
 
 // Questions
-var q1 = document.getElementById("question1");
-var q2 = document.getElementById("question2");
-var q3 = document.getElementById("question3");
-var q4 = document.getElementById("question4");
-var q5 = document.getElementById("question5");
-var questions = [q1, q2, q3, q4, q5];
+var questions = [
+    {question:"Commonly used data types DO NOT include:", 
+    choices: ["alerts", "strings", "booleans", "numbers"],
+    answer:0 
+    },
+
+    {question:"Question: Commonly used data types DO NOT include:", 
+    choices: ["alerts", "strings", "booleans", "numbers"],
+    answer:0 
+    },
+
+    {question:"Question: Commonly used data types DO NOT include:", 
+    choices: ["alerts", "strings", "booleans", "numbers"],
+    answer:0 
+    },
+
+    {question:"Question: Commonly used data types DO NOT include:", 
+    choices: ["alerts", "strings", "booleans", "numbers"],
+    answer:0 
+    },
+
+    {question:"Question: Commonly used data types DO NOT include:", 
+    choices: ["alerts", "strings", "booleans", "numbers"],
+    answer:0 
+    }
+]
+
+
+// var q1 = document.getElementById("question1");
+// var q2 = document.getElementById("question2");
+// var q3 = document.getElementById("question3");
+// var q4 = document.getElementById("question4");
+// var q5 = document.getElementById("question5");
+// var questions = [q1, q2, q3, q4, q5];
+
+
+
+
+
+
 
 // Countdown timer funtion
 function countdown() {
@@ -41,11 +80,15 @@ function displayQuestion() {
 }
 
 
+function newQuestion() {
+    const questionsLeft = questions[Math.floor(Math.random() * questions.length)];
+    asking = questionsLeft
+    questionEl.innerHTML = 
+}
 
 
 
-
-////////////// Start Quiz function //////////////
+////////////// START QUIZ function //////////////
 // When clicking start quiz button, calls countdown function, makes welcome screen disappear
 startquiz.addEventListener("click", function () {
     var welcome = document.getElementById("welcome");
