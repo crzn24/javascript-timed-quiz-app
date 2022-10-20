@@ -1,10 +1,9 @@
-// Hook to UI
+////////// Hook to UI (DOM hooks) /////////////
 var startBtn = document.querySelector("#startquiz");
-
-
-
-// Visible timer
 var timerEl = document.getElementById('countdown');
+var score = document.querySelector("#finalscore");
+
+///////// State variables /////////////////
 
 
 // Questions
@@ -20,7 +19,7 @@ var q1no = document.getElementById("q1incorrect");
 
 // Countdown timer funtion
 function countdown() {
-    var timeLeft = 20;
+    var timeLeft = 10;
     var timeInterval = setInterval(function () {
         timeLeft--;
         timerEl.textContent = "Time: " + timeLeft;
@@ -35,15 +34,10 @@ function countdown() {
 
 
 
-// End screen function
-function displayMessage() {
-    var endscreen = document.getElementById("endscreen");
-    endscreen.style.display = "block";
-}
 
 
 
-
+////////////// Start Quiz function //////////////
 // When clicking start quiz button, calls countdown function, makes welcome screen disappear
 startquiz.addEventListener("click", function () {
     countdown();
@@ -66,5 +60,11 @@ startquiz.addEventListener("click", function () {
 
 
 
+//////////// End screen function /////////////////
+function displayMessage() {
+    var endscreen = document.getElementById("endscreen");
+    endscreen.style.display = "block";
+    score.displayMessage("Your final score is " + score + ".");
+}
 
 
