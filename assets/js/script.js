@@ -2,7 +2,7 @@
 var startBtn = document.querySelector("#startquiz");
 var timerEl = document.getElementById("countdown");
 var score = document.querySelector("#finalscore");
-// var questionContainer1 = document.querySelector(".question-container1");
+
 var questionContainer = document.querySelector(".question-container");
 var questionEl = document.querySelector(".question");
 var choicesArea = document.querySelector(".choices-area");
@@ -55,10 +55,10 @@ questionEl.textContent = questions[0].question;
 for (let i = 0; i < questions[0].choices.length; i++) {
   console.log(questions[0].choices[i]);
   var choiceButton = document.createElement("button");
-  
+
   choiceButton.innerHTML = questions[0].choices[i];
   console.log(choiceButton);
-  choicesArea.appendChild(choiceButton)
+  choicesArea.appendChild(choiceButton);
 }
 
 // var q1 = document.getElementById("question1");

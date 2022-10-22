@@ -1,149 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JavaScript Timed Coding Quiz</title>
-        <link rel="stylesheet" href="assets/css/style.css" />
-      </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Timed Coding Quiz</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<!-- Nav area to view high scores and timer   -->
-      <body>
-         <nav>
-            <p>
-                <a href="#high-scores">View High Scores</a>
-            </p>
-            <p id="countdown"></p>
-        </nav>
-        
-<!-- Welcome Screen  -->
-        <div id="welcome">
-            <h1>JavaScript Timed Coding Quiz</h1>
-            <p>
-                Try to answer the following JavaScript code-related questions within the time limit. Incorrect answers will subtract time from the clock.
-            </p>
-            <div>
-                <button id="startquiz">Start Quiz</button>
-            </div>
-        </div>
+  <!-- Nav area to view high scores and timer   -->
+  <body>
+    <nav>
+      <p>
+        <a href="#high-scores">View High Scores</a>
+      </p>
+      <p id="countdown"></p>
+    </nav>
 
-       
-<!-- QUESTIONS -->
+    <!-- Welcome Screen  -->
+    <div id="welcome">
+      <h1>JavaScript Timed Coding Quiz</h1>
+      <p>
+        Try to answer the following JavaScript code-related questions within the
+        time limit. Incorrect answers will subtract time from the clock.
+      </p>
+      <div>
+        <button id="startquiz">Start Quiz</button>
+      </div>
+    </div>
 
+    <!-- QUESTIONS -->
 
-        <div class="questionContainer">
-            <div class="question"></div>
-            <ol class="choices-area">
-                <!-- <li id="choice"><button></button></li>
+    <div class="questionContainer">
+      <div class="question"></div>
+      <ol class="choices-area">
+        <!-- <li id="choice"><button></button></li>
                 <li id="choice"><button></button></li>
                 <li id="choice"><button></button></li>
                 <li id="choice"><button></button></li> -->
-            </ol>
-        </div>
+      </ol>
+    </div>
 
 
 
 
+    <section>
+      <!-- <div class="question-container1" id="question1" style="display: none">
+        <h2>Commonly used data types DO NOT include:</h2>
+        <ol>
+          <li><button data-status="correct">alerts</button></li>
+          <li><button data-status="incorrect">strings</button></li>
+          <li><button data-status="incorrect">booleans</button></li>
+          <li><button data-status="incorrect">numbers</button></li>
+        </ol>
+        <p id="status"></p>
+      </div>
 
+      
+      <div id="question2" style="display: none">
+        <h2>
+          The condition in an if / else statement is enclosed within ____.
+        </h2>
+        <ol>
+          <li><button>square brackets</button></li>
+          <li><button>curly brackets</button></li>
+          <li><button>parentheses</button></li>
+          <li><button>quotes</button></li>
+        </ol>
+        <p id="status"></p>
+      </div>
 
-
-
-
-        <!-- Question 1 -->
-        <div class = question-container1 id="question1" style="display:none">
-            <h2>Commonly used data types DO NOT include:</h2>
-            <ol>
-                <li><button data-status=correct>alerts</button></li>
-                <!-- ^correct answer -->
-                <li><button data-status=incorrect>strings</button></li>
-                <li><button data-status=incorrect>booleans</button></li>
-                <li><button data-status=incorrect>numbers</button></li>
-            </ol>
-            <p id="status"></p>
-        </div>
-
-        <!-- Question 2 -->
-        <div id="question2" style="display:none">
-            <h2>The condition in an if / else statement is enclosed within ____.</h2>
-            <ol>
-                <li><button>square brackets</button></li>
-                <li><button>curly brackets</button></li> 
-                <li><button>parentheses</button></li>
-                <!-- ^correct answer -->
-                <li><button>quotes</button></li>
-            </ol>
-            <p id="status"></p>
-       </div>
-
-       <!-- Question 3 -->
-       <div id="question3" style="display:none">
-            <h2>Arrays in JavaScript can be used to store ____.</h2>
-            <ol>
-                <li><button>booleans</button></li>
-                <li><button>other arrays</button></li>
-                <li><button>numbers and strings</button></li>
-                <li><button>all of the above</button></li>
-                <!-- ^correct answer -->
-            </ol>
-            <p id="status"></p>
-        </div>
-       
-        <!-- Question 4 -->
-        <div id="question4" style="display:none">
-            <h2>String values must be enclosed within ____
-                when being assigned to variables.</h2>
-            <ol>
-                <li><button>curly brackets</button></li>
-                <li><button>commas</button></li>
-                <li><button>quotes</button></li>
-                <!-- ^correct answer -->
-                <li><button>parentheses</button></li>
-            </ol>
-            <p id="status"></p>
-        </div>
-
-        <!-- Question 5 -->
-        <div id="question5" style="display:none">
-            <h2>A very useful tool used during development
-                and debugging for printing content to the
-                debugger is:</h2>
-            <ol>
-                <li><button>terminal/bash</button></li>
-                <li><button id="q5correct">console.log</button></li>
-                <!-- ^correct answer -->
-                <li><button>JavaScript</button></li>
-                <li><button>for loops</button></li>
-            </ol>
-            <p id="status"></p>
-        </div>
-
-
-<!-- End screen -->
-        <div id="endscreen" style="display:none">
-            <h2>You're done!</h2>
-            <p id="finalscore"></p>
-            <p>Enter initials:</p>
-            <form>
-                <input type="text">
-                <input type="submit">
-            </form>
-        </div>
+     
+      <div id="question3" style="display: none">
+        <h2>Arrays in JavaScript can be used to store ____.</h2>
+        <ol>
+          <li><button>booleans</button></li>
+          <li><button>other arrays</button></li>
+          <li><button>numbers and strings</button></li>
+          <li><button>all of the above</button></li>
+        </ol>
+        <p id="status"></p>
+      </div>
 
     
-<!-- High Scores Screen -->
-       <div style="display:none">
-            <h2>High Scores</h2>
-        
-            <div>
-                <button>Go Back</button>
-                <button>Clear High Scores</button>
-            </div>
-       </div>
+      <div id="question4" style="display: none">
+        <h2>
+          String values must be enclosed within ____ when being assigned to
+          variables.
+        </h2>
+        <ol>
+          <li><button>curly brackets</button></li>
+          <li><button>commas</button></li>
+          <li><button>quotes</button></li>
+          <li><button>parentheses</button></li>
+        </ol>
+        <p id="status"></p>
+      </div>
+
+      <div id="question5" style="display: none">
+        <h2>
+          A very useful tool used during development and debugging for printing
+          content to the debugger is:
+        </h2>
+        <ol>
+          <li><button>terminal/bash</button></li>
+          <li><button id="q5correct">console.log</button></li>
+          <li><button>JavaScript</button></li>
+          <li><button>for loops</button></li>
+        </ol>
+        <p id="status"></p>
+      </div> -->
+    </section>
 
 
 
 
-        <script src="assets/js/script.js"></script>
-      </body>
+    
+    <!-- End screen -->
+    <div id="endscreen" style="display: none">
+      <h2>You're done!</h2>
+      <p id="finalscore"></p>
+      <p>Enter initials:</p>
+      <form>
+        <input type="text" />
+        <input type="submit" />
+      </form>
+    </div>
 
+    <!-- High Scores Screen -->
+    <div style="display: none">
+      <h2>High Scores</h2>
+
+      <div>
+        <button>Go Back</button>
+        <button>Clear High Scores</button>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
