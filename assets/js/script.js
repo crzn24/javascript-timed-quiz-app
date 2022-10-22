@@ -147,7 +147,7 @@ var countdown = function () {
 // });
 
 
-///// Checks for incorrect or correct answers /////
+///// Checks for incorrect or correct answers and gives new questions if available /////
 function checkAnswer(selectedAnswer) {
   var correctAnswer = questions[currentQuestionIndex].answer;
   if (selectedAnswer === correctAnswer) {
