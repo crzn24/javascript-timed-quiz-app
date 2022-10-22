@@ -13,22 +13,18 @@ var choiceB = document.getElementById("choice-b");
 var choiceC = document.getElementById("choice-c");
 var choiceD = document.getElementById("choice-d");
 
-
 ///////// State variables? /////////////////
-
 
 ////////////// START QUIZ function //////////////
 // When clicking start quiz button, calls countdown function, makes welcome screen disappear
 startBtn.addEventListener("click", function () {
-    console.log("button was clicked");
-    startQuiz();
+  console.log("button was clicked");
+  startQuiz();
   var welcome = document.getElementById("welcome");
   welcome.style.display = "none";
-//   countdown();
-//   newQuestion();
-  
+  //   countdown();
+  //   newQuestion();
 });
-
 
 /////////////// Questions /////////////////////
 var questions = [
@@ -87,21 +83,19 @@ var questions = [
 //   choicesArea.appendChild(choiceButton);
 // }
 
-
-
 var time = 60;
 var remainingTime = "";
 var valId;
 
-var currentQuestionIndex = 0
+var currentQuestionIndex = 0;
 
 function startQuiz() {
-    remainingTime = time;
-    valId = setInterval(countdown, 1000);
-    timerEl.textContent = time;
-    console.log("hello");
-    currentQuestionIndex++;
-    newQuestion();
+  remainingTime = time;
+  valId = setInterval(countdown, 1000);
+  timerEl.textContent = time;
+  console.log("hello");
+  currentQuestionIndex++;
+  newQuestion();
 }
 
 function newQuestion() {
@@ -113,22 +107,16 @@ function newQuestion() {
   choiceD.textContent = questions[currentQuestionIndex].choices[3];
 }
 
-
-
 /////////// Countdown timer funtion //////////////////
 var countdown = function () {
-  
-    time--;
-    timerEl.textContent = "Time: " + time;
+  time--;
+  timerEl.textContent = "Time: " + time;
 
-    if (time === 0) {
-      clearInterval(timeInterval);
-      displayMessage();
-    }
-  
-}
-
-
+  if (time === 0) {
+    clearInterval(timeInterval);
+    displayMessage();
+  }
+};
 
 // Listens for clicks in question 1 container
 // questionContainer1.addEventListener("click", function (event) {
@@ -151,38 +139,37 @@ var countdown = function () {
 //   }
 // });
 
-
 function checkAnswer(selectedAnswer) {
-    var correctAnswer = questions[currentQuestionIndex].answer;
-    if (selectedAnswer === correctAnswer) {
-        alert("Correct!")
-    } else {
-        alert("Incorrect!");
-    };
-    if (currentQuestionIndex === questions.length -1) {
-        alert("You are done!")
-    } else {
-        currentQuestionIndex++;
-        newQuestion();
-    }
+  var correctAnswer = questions[currentQuestionIndex].answer;
+  if (selectedAnswer === correctAnswer) {
+    alert("Correct!");
+  } else {
+    alert("Incorrect!");
+  }
+  if (currentQuestionIndex === questions.length - 1) {
+    alert("You are done!");
+  } else {
+    currentQuestionIndex++;
+    newQuestion();
+  }
 }
 
 //////////// Event Listeners for choices buttons ///////////
-choiceA.addEventListener("click", function(){
-    checkAnswer(choiceA.textContent);
- });
+choiceA.addEventListener("click", function () {
+  checkAnswer(choiceA.textContent);
+});
 
- choiceB.addEventListener("click", function(){
-    checkAnswer(choiceB.textContent);
- });
+choiceB.addEventListener("click", function () {
+  checkAnswer(choiceB.textContent);
+});
 
- choiceC.addEventListener("click", function(){
-    checkAnswer(choiceC.textContent);
- });
+choiceC.addEventListener("click", function () {
+  checkAnswer(choiceC.textContent);
+});
 
- choiceD.addEventListener("click", function(){
-    checkAnswer(choiceD.textContent);
- });
+choiceD.addEventListener("click", function () {
+  checkAnswer(choiceD.textContent);
+});
 
 //////////// End screen function /////////////////
 function displayMessage() {
