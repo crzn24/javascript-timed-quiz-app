@@ -26,6 +26,13 @@ startBtn.addEventListener("click", function () {
   //   newQuestion();
 });
 
+//////////// End screen function /////////////////
+function displayMessage() {
+    var endscreen = document.getElementById("endscreen");
+    endscreen.style.display = "block";
+    score.displayMessage("Your final score is " + score + ".");
+  }
+
 /////////////// Questions /////////////////////
 var questions = [
   {
@@ -113,7 +120,7 @@ var countdown = function () {
   timerEl.textContent = "Time: " + time + " seconds left.";
 
   if (time === 0) {
-    clearInterval(timeInterval);
+    clearInterval(time);
     displayMessage();
   }
 };
@@ -171,9 +178,4 @@ choiceD.addEventListener("click", function () {
   checkAnswer(choiceD.textContent);
 });
 
-//////////// End screen function /////////////////
-function displayMessage() {
-  var endscreen = document.getElementById("endscreen");
-  endscreen.style.display = "block";
-  score.displayMessage("Your final score is " + score + ".");
-}
+
