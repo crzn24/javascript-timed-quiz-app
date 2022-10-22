@@ -2,8 +2,9 @@
 var startBtn = document.querySelector("#startquiz");
 var timerEl = document.getElementById("countdown");
 var score = document.querySelector("#finalscore");
-
-var submitBtn = document.getElementById("submit")
+var initialsInput = document.getElementById("initials-input");
+var submitBtn = document.getElementById("submit");
+var highScores = document.getElementById("high-scores");
 
 var questionContainer = document.querySelector(".question-container");
 var questionEl = document.querySelector(".question");
@@ -194,11 +195,28 @@ choiceD.addEventListener("click", function () {
 
 submitBtn.addEventListener("click", function(event) {
     event.preventDefault();
-
     console.log("i need scores");
+   
+    var finalScore = {
+        initials: initialsInput.value,
+    
+    }
+    
+    // if (initials === "") {
+    //     alert("You need to enter your initials.");
+    //   } else {
+    //     alert("Nice!");
+    
+    //     localStorage.setItem("initials", JSON.stringify(initials));
+    //   }
+
+    localStorage.setItem("initials", JSON.stringify(finalScore));
 });
 
 
 
 
+highScores.addEventListener("click", function() {
+    highScores.style.display = "visible";
 
+});
