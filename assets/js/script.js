@@ -51,6 +51,8 @@ var questions = [
   },
 ];
 
+
+////////// Questions and choices for loop  ///////////////
 questionEl.textContent = questions[0].question;
 for (let i = 0; i < questions[0].choices.length; i++) {
   console.log(questions[0].choices[i]);
@@ -68,7 +70,22 @@ for (let i = 0; i < questions[0].choices.length; i++) {
 // var q5 = document.getElementById("question5");
 // var questions = [q1, q2, q3, q4, q5];
 
-// Countdown timer funtion
+
+///////// Display question functions ///////////////
+function displayQuestion() {
+  var randomQuestion = Math.floor(Math.random() * questions.length);
+  randomQuestion.display = "block";
+}
+
+function newQuestion() {
+  const questionsLeft = questions[Math.floor(Math.random() * questions.length)];
+  asking = questionsLeft;
+  questionEl.innerHTML = asking;
+}
+
+
+
+/////////// Countdown timer funtion //////////////////
 function countdown() {
   var timeLeft = 10;
   var timeInterval = setInterval(function () {
@@ -82,18 +99,7 @@ function countdown() {
   }, 1000);
 }
 
-///////// Display question functions ///////////////
 
-function displayQuestion() {
-  var randomQuestion = Math.floor(Math.random() * questions.length);
-  randomQuestion.display = "block";
-}
-
-function newQuestion() {
-  const questionsLeft = questions[Math.floor(Math.random() * questions.length)];
-  asking = questionsLeft;
-  questionEl.innerHTML = asking;
-}
 
 ////////////// START QUIZ function //////////////
 // When clicking start quiz button, calls countdown function, makes welcome screen disappear
