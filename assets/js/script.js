@@ -71,7 +71,7 @@ var questions = [
   },
 ];
 
-//////////// Display question functions and Timer ///////////////////
+//////////// Display questions functions and Timer ///////////////////
 // function displayQuestion() {
 //   var randomQuestion = Math.floor(Math.random() * questions.length);
 //   randomQuestion.display = "block";
@@ -155,12 +155,12 @@ var countdown = function () {
 function checkAnswer(selectedAnswer) {
     var correctAnswer = questions[currentQuestionIndex].answer;
     if (selectedAnswer === correctAnswer) {
-        alert("You are correct!")
+        alert("Correct!")
     } else {
         alert("Incorrect!");
     };
     if (currentQuestionIndex === questions.length -1) {
-        alert("you are done!")
+        alert("You are done!")
     } else {
         currentQuestionIndex++;
         newQuestion();
