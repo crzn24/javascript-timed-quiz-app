@@ -19,7 +19,7 @@ var choiceD = document.getElementById("choice-d");
 // When clicking start quiz button, calls countdown function, makes welcome screen disappear
 startBtn.addEventListener("click", function () {
     console.log("button was clicked");
-    startQuiz;
+    startQuiz();
   var welcome = document.getElementById("welcome");
   welcome.style.display = "none";
 //   countdown();
