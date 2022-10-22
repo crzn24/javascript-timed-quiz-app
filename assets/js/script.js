@@ -8,14 +8,32 @@ var questionEl = document.querySelector(".question");
 var choicesArea = document.querySelector(".choices-area");
 var choice = document.querySelector("#choice");
 
+var choiceA = document.getElementById("choice-a");
+var choiceB = document.getElementById("choice-b");
+var choiceC = document.getElementById("choice-c");
+var choiceD = document.getElementById("choice-d");
 ///////// State variables? /////////////////
+
+
+////////////// START QUIZ function //////////////
+// When clicking start quiz button, calls countdown function, makes welcome screen disappear
+startBtn.addEventListener("click", function () {
+    console.log("button was clicked");
+    startQuiz;
+  var welcome = document.getElementById("welcome");
+  welcome.style.display = "none";
+//   countdown();
+//   newQuestion();
+  
+});
+
 
 // Questions
 var questions = [
   {
     question: "Commonly used data types DO NOT include:",
     choices: ["alerts", "strings", "booleans", "numbers"],
-    answer: 0,
+    answer: "alerts",
   },
 
   {
@@ -53,15 +71,15 @@ var questions = [
 
 
 ////////// Questions and choices for loop  ///////////////
-questionEl.textContent = questions[0].question;
-for (let i = 0; i < questions[0].choices.length; i++) {
-  console.log(questions[0].choices[i]);
-  var choiceButton = document.createElement("button");
+// questionEl.textContent = questions[0].question;
+// for (let i = 0; i < questions[0].choices.length; i++) {
+//   console.log(questions[0].choices[i]);
+//   var choiceButton = document.createElement("button");
 
-  choiceButton.innerHTML = questions[0].choices[i];
-  console.log(choiceButton);
-  choicesArea.appendChild(choiceButton);
-}
+//   choiceButton.innerHTML = questions[0].choices[i];
+//   console.log(choiceButton);
+//   choicesArea.appendChild(choiceButton);
+// }
 
 // var q1 = document.getElementById("question1");
 // var q2 = document.getElementById("question2");
@@ -72,43 +90,55 @@ for (let i = 0; i < questions[0].choices.length; i++) {
 
 
 ///////// Display question functions ///////////////
-function displayQuestion() {
-  var randomQuestion = Math.floor(Math.random() * questions.length);
-  randomQuestion.display = "block";
+// function displayQuestion() {
+//   var randomQuestion = Math.floor(Math.random() * questions.length);
+//   randomQuestion.display = "block";
+// }
+var time = 10;
+var remainingTime = "";
+var valId;
+
+var currentQuestionIndex = 0
+
+function startQuiz() {
+    remainingTime = time;
+    valId = setInterval(countdown, 1000);
+    timerEl.textContent = time;
+    console.log("hello");
+    currentQuestionIndex++;
+    newQuestion();
 }
 
 function newQuestion() {
-  const questionsLeft = questions[Math.floor(Math.random() * questions.length)];
-  asking = questionsLeft;
-  questionEl.innerHTML = asking;
+  var currentQuestion = questions[currentQuestionIndex];
+  questionEl.textContent = currentQuestion.question;
+  choiceA.textContent = questions[currentQuestionIndex].choices[0];
+  choiceB.textContent = questions[currentQuestionIndex].choices[1];
+  choiceC.textContent = questions[currentQuestionIndex].choices[2];
+  choiceD.textContent = questions[currentQuestionIndex].choices[3];
 }
 
 
 
 /////////// Countdown timer funtion //////////////////
-function countdown() {
-  var timeLeft = 10;
-  var timeInterval = setInterval(function () {
-    timeLeft--;
-    timerEl.textContent = "Time: " + timeLeft;
+var countdown = function () {
+  
 
-    if (timeLeft === 0) {
+    time--;
+    timerEl.textContent = "Time: " + time;
+
+    if (time === 0) {
       clearInterval(timeInterval);
       displayMessage();
     }
-  }, 1000);
+  
 }
 
 
 
-////////////// START QUIZ function //////////////
-// When clicking start quiz button, calls countdown function, makes welcome screen disappear
-startquiz.addEventListener("click", function () {
-  var welcome = document.getElementById("welcome");
-  welcome.style.display = "none";
-  countdown();
-  displayQuestion();
-});
+
+
+
 
 // Listens for clicks in question 1 container
 // questionContainer1.addEventListener("click", function (event) {
@@ -130,6 +160,36 @@ startquiz.addEventListener("click", function () {
 //     }
 //   }
 // });
+function checkAnswer(selectedAnswer) {
+    var correctAnswer = questions[currentQuestionIndex].answer;
+    if (selectedAnswer === correctAnswer) {
+        alert("You are correct!")
+    } else {
+        alert("Incorrect!");
+    };
+    if (currentQuestionIndex === questions.length -1) {
+        alert("you are done!")
+    } else {
+        currentQuestionIndex++;
+        newQuestion();
+    }
+}
+
+choiceA.addEventListener("click", function(){
+    checkAnswer(choiceA.textContent);
+ });
+
+ choiceB.addEventListener("click", function(){
+    checkAnswer(choiceB.textContent);
+ });
+
+ choiceC.addEventListener("click", function(){
+    checkAnswer(choiceC.textContent);
+ });
+
+ choiceD.addEventListener("click", function(){
+    checkAnswer(choiceD.textContent);
+ });
 
 //////////// End screen function /////////////////
 function displayMessage() {
