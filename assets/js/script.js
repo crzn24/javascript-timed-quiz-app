@@ -12,6 +12,8 @@ var choiceA = document.getElementById("choice-a");
 var choiceB = document.getElementById("choice-b");
 var choiceC = document.getElementById("choice-c");
 var choiceD = document.getElementById("choice-d");
+
+
 ///////// State variables? /////////////////
 
 
@@ -40,7 +42,7 @@ var questions = [
     question:
       "The condition in an if / else statement is enclosed within ____.",
     choices: ["square brackets", "curly brackets", "parentheses", "quotes"],
-    answer: 2,
+    answer: "parentheses",
   },
 
   {
@@ -51,21 +53,21 @@ var questions = [
       "numbers and strings",
       "all of the above",
     ],
-    answer: 3,
+    answer: "all of the above",
   },
 
   {
     question:
       "String values must be enclosed within ____ when being assigned to variables.",
     choices: ["curly brackets", "commas", "quotes", "parentheses"],
-    answer: 2,
+    answer: "quotes",
   },
 
   {
     question:
       "A very useful tool used during development and debugging for printing content to the debugger is:",
     choices: ["terminal/bash", "console.log", "JavaScript", "for loops"],
-    answer: 1,
+    answer: "console.log",
   },
 ];
 
