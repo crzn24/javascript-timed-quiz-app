@@ -110,7 +110,7 @@ function newQuestion() {
 /////////// Countdown timer funtion //////////////////
 var countdown = function () {
   time--;
-  timerEl.textContent = "Time: " + time;
+  timerEl.textContent = "Time: " + time + " seconds left.";
 
   if (time === 0) {
     clearInterval(timeInterval);
