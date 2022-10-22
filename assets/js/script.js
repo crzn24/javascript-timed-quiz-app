@@ -90,7 +90,7 @@ var questions = [
 //   choicesArea.appendChild(choiceButton);
 // }
 
-var time = 60;
+var time = 30;
 var remainingTime = "";
 var valId;
 
@@ -120,7 +120,7 @@ var countdown = function () {
   timerEl.textContent = "Time: " + time + " seconds left.";
 
   if (time === 0) {
-    clearInterval(time);
+    clearInterval(valId);
     displayMessage();
   }
 };
@@ -146,6 +146,8 @@ var countdown = function () {
 //   }
 // });
 
+
+///// Checks for incorrect or correct answers /////
 function checkAnswer(selectedAnswer) {
   var correctAnswer = questions[currentQuestionIndex].answer;
   if (selectedAnswer === correctAnswer) {
@@ -155,6 +157,8 @@ function checkAnswer(selectedAnswer) {
   }
   if (currentQuestionIndex === questions.length - 1) {
     alert("You are done!");
+    clearInterval(valId);
+    displayMessage();
   } else {
     currentQuestionIndex++;
     newQuestion();
