@@ -3,6 +3,8 @@ var startBtn = document.querySelector("#startquiz");
 var timerEl = document.getElementById("countdown");
 var score = document.querySelector("#finalscore");
 
+var submitBtn = document.getElementById("submit")
+
 var questionContainer = document.querySelector(".question-container");
 var questionEl = document.querySelector(".question");
 var choicesArea = document.querySelector(".choices-area");
@@ -186,5 +188,17 @@ choiceC.addEventListener("click", function () {
 choiceD.addEventListener("click", function () {
   checkAnswer(choiceD.textContent);
 });
+
+
+//////////// High Scores and Logging Scores //////////
+
+submitBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    console.log("i need scores");
+});
+
+
+
 
 
