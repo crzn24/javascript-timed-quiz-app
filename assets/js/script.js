@@ -30,7 +30,7 @@ startBtn.addEventListener("click", function () {
 });
 
 
-// Questions
+/////////////// Questions /////////////////////
 var questions = [
   {
     question: "Commonly used data types DO NOT include:",
@@ -71,8 +71,12 @@ var questions = [
   },
 ];
 
-
-////////// Questions and choices for loop  ///////////////
+//////////// Display question functions and Timer ///////////////////
+// function displayQuestion() {
+//   var randomQuestion = Math.floor(Math.random() * questions.length);
+//   randomQuestion.display = "block";
+// }
+// // Questions and choices for loop suggested by TA ////
 // questionEl.textContent = questions[0].question;
 // for (let i = 0; i < questions[0].choices.length; i++) {
 //   console.log(questions[0].choices[i]);
@@ -83,20 +87,9 @@ var questions = [
 //   choicesArea.appendChild(choiceButton);
 // }
 
-// var q1 = document.getElementById("question1");
-// var q2 = document.getElementById("question2");
-// var q3 = document.getElementById("question3");
-// var q4 = document.getElementById("question4");
-// var q5 = document.getElementById("question5");
-// var questions = [q1, q2, q3, q4, q5];
 
 
-///////// Display question functions ///////////////
-// function displayQuestion() {
-//   var randomQuestion = Math.floor(Math.random() * questions.length);
-//   randomQuestion.display = "block";
-// }
-var time = 10;
+var time = 60;
 var remainingTime = "";
 var valId;
 
@@ -125,7 +118,6 @@ function newQuestion() {
 /////////// Countdown timer funtion //////////////////
 var countdown = function () {
   
-
     time--;
     timerEl.textContent = "Time: " + time;
 
@@ -135,10 +127,6 @@ var countdown = function () {
     }
   
 }
-
-
-
-
 
 
 
@@ -162,6 +150,8 @@ var countdown = function () {
 //     }
 //   }
 // });
+
+
 function checkAnswer(selectedAnswer) {
     var correctAnswer = questions[currentQuestionIndex].answer;
     if (selectedAnswer === correctAnswer) {
@@ -177,6 +167,7 @@ function checkAnswer(selectedAnswer) {
     }
 }
 
+//////////// Event Listeners for choices buttons ///////////
 choiceA.addEventListener("click", function(){
     checkAnswer(choiceA.textContent);
  });
