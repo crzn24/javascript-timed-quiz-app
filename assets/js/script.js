@@ -94,7 +94,7 @@ var questions = [
 //   choicesArea.appendChild(choiceButton);
 // }
 
-var time = 30;
+var time = 60;
 var remainingTime = "";
 var valId;
 
