@@ -13,7 +13,10 @@ var choiceB = document.getElementById("choice-b");
 var choiceC = document.getElementById("choice-c");
 var choiceD = document.getElementById("choice-d");
 
-///////// State variables? /////////////////
+///////// State variables /////////////////
+var score = localStorage.getItem("score");
+
+
 
 ////////////// START QUIZ function //////////////
 // When clicking start quiz button, calls countdown function, makes welcome screen disappear
@@ -75,6 +78,7 @@ var questions = [
 ];
 
 //////////// Display questions functions and Timer ///////////////////
+//
 // function displayQuestion() {
 //   var randomQuestion = Math.floor(Math.random() * questions.length);
 //   randomQuestion.display = "block";
@@ -154,6 +158,7 @@ function checkAnswer(selectedAnswer) {
     alert("Correct!");
   } else {
     alert("Incorrect!");
+    time -= 10;
   }
   if (currentQuestionIndex === questions.length - 1) {
     alert("You are done!");
