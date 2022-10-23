@@ -194,9 +194,6 @@ choiceD.addEventListener("click", function () {
 
 
 //////////// High Scores and Logging Scores //////////
-
-
-
 submitBtn.addEventListener("click", function(event) {
     event.preventDefault(event);
     console.log("i need scores");
@@ -218,8 +215,13 @@ submitBtn.addEventListener("click", function(event) {
     
     //     localStorage.setItem("initials", JSON.stringify(initials));
     //   }
-    localStorage.setItem("initials", JSON.stringify(loggedScore));
+    window.localStorage.setItem("loggedScore", JSON.stringify(loggedScore));
 });
+
+
+
+
+let previousScores = window.localStorage.getItem("loggedScore");
 
 
 
