@@ -194,6 +194,12 @@ choiceD.addEventListener("click", function () {
 
 
 //////////// High Scores and Logging Scores //////////
+var storedScores = document.getElementById("stored-scores");
+var clearScoresBtn = document.createElement("button");
+clearScoresBtn.innerHTML = "Clear High Scores";
+var clearScoresEl = document.getElementById("clear-scores");
+var highScoresTitle = document.getElementById("highscore-title");
+
 submitBtn.addEventListener("click", function(event) {
     event.preventDefault(event);
     console.log("i need scores");
@@ -219,15 +225,23 @@ submitBtn.addEventListener("click", function(event) {
 });
 
 
+/// Retrieves previous high scores ///
 
+var previousScores = JSON.parse(window.localStorage.getItem('loggedScore'));
 
-let previousScores = window.localStorage.getItem("loggedScore");
-
-
-
+function viewHighscores() {
+    storedScores.textContent = previousScores;
+}
 
 
 highScores.addEventListener("click", function() {
     console.log("who got the high score?")
-    highScores.style.display = "block";
+    viewHighscores();
+    clearScoresEl.appendChild(clearScoresBtn);
+});
+
+
+clearScoresBtn.addEventListener("click", function() {
+    console.log("Delete!");
+    
 });
