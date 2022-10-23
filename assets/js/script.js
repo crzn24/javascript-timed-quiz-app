@@ -1,7 +1,7 @@
 ////////// Hook to UI (DOM hooks) /////////////
 var startBtn = document.querySelector("#startquiz");
 var timerEl = document.getElementById("countdown");
-var score = document.querySelector("#finalscore");
+var scoreFinal = document.querySelector("#finalscore");
 var initialsInput = document.getElementById("initials-input");
 var submitBtn = document.getElementById("submit");
 var highScores = document.getElementById("high-scores");
@@ -17,7 +17,8 @@ var choiceC = document.getElementById("choice-c");
 var choiceD = document.getElementById("choice-d");
 
 ///////// State variables /////////////////
-var score = localStorage.getItem("score");
+var score = 0;
+var scoreRecall = localStorage.getItem("score");
 
 
 
@@ -36,7 +37,7 @@ startBtn.addEventListener("click", function () {
 function displayMessage() {
     var endscreen = document.getElementById("endscreen");
     endscreen.style.display = "block";
-    score.displayMessage("Your final score is " + score + ".");
+    alert("Your final score is " + score + ".");
   }
 
 /////////////// Questions /////////////////////
@@ -101,7 +102,7 @@ var time = 60;
 var remainingTime = "";
 var valId;
 
-var currentQuestionIndex = 0;
+var currentQuestionIndex = -1;
 
 function startQuiz() {
   remainingTime = time;
@@ -159,6 +160,7 @@ function checkAnswer(selectedAnswer) {
   var correctAnswer = questions[currentQuestionIndex].answer;
   if (selectedAnswer === correctAnswer) {
     alert("Correct!");
+    score++;
   } else {
     alert("Incorrect!");
     time -= 10;
@@ -197,9 +199,9 @@ submitBtn.addEventListener("click", function(event) {
     event.preventDefault();
     console.log("i need scores");
    
-    var finalScore = {
+    var loggedScore = {
         initials: initialsInput.value,
-    
+        highscore: score.value,
     }
     
     // if (initials === "") {
@@ -210,13 +212,13 @@ submitBtn.addEventListener("click", function(event) {
     //     localStorage.setItem("initials", JSON.stringify(initials));
     //   }
 
-    localStorage.setItem("initials", JSON.stringify(finalScore));
+    localStorage.setItem("initials", JSON.stringify(loggedScore));
 });
 
 
 
 
 highScores.addEventListener("click", function() {
-    highScores.style.display = "visible";
-
+    console.log("who got the high score?")
+    highScores.style.display = "block";
 });
