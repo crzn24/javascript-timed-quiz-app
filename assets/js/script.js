@@ -11,6 +11,11 @@ var questionEl = document.querySelector(".question");
 var choicesArea = document.querySelector(".choices-area");
 var choice = document.querySelector("#choice");
 
+// var choiceAbtn = document.createElement("button");
+// var choiceBbtn = document.createElement("button");
+// var choiceCbtn = document.createElement("button");
+// var choiceDbtn = document.createElement("button");
+
 var choiceA = document.getElementById("choice-a");
 var choiceB = document.getElementById("choice-b");
 var choiceC = document.getElementById("choice-c");
@@ -104,15 +109,6 @@ var valId;
 
 var currentQuestionIndex = -1;
 
-function startQuiz() {
-  remainingTime = time;
-  valId = setInterval(countdown, 1000);
-  timerEl.textContent = time;
-  console.log("hello");
-  currentQuestionIndex++;
-  newQuestion();
-}
-
 function newQuestion() {
   var currentQuestion = questions[currentQuestionIndex];
   questionEl.textContent = currentQuestion.question;
@@ -121,6 +117,18 @@ function newQuestion() {
   choiceC.textContent = questions[currentQuestionIndex].choices[2];
   choiceD.textContent = questions[currentQuestionIndex].choices[3];
 }
+
+function startQuiz() {
+  remainingTime = time;
+  valId = setInterval(countdown, 1000);
+  timerEl.textContent = time;
+  console.log("hello");
+  currentQuestionIndex++;
+//   choiceA.appendChild(choiceAbtn);
+  newQuestion();
+}
+
+
 
 /////////// Countdown timer funtion //////////////////
 var countdown = function () {
