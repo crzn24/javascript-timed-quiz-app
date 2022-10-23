@@ -195,14 +195,21 @@ choiceD.addEventListener("click", function () {
 
 //////////// High Scores and Logging Scores //////////
 
+
+
 submitBtn.addEventListener("click", function(event) {
-    event.preventDefault();
+    event.preventDefault(event);
     console.log("i need scores");
    
+    // if (initialsInput === "") {
+    //     return;
+    // }
+
     var loggedScore = {
         initials: initialsInput.value,
-        highscore: score.value,
+        highscore: score,
     }
+
     
     // if (initials === "") {
     //     alert("You need to enter your initials.");
@@ -211,9 +218,9 @@ submitBtn.addEventListener("click", function(event) {
     
     //     localStorage.setItem("initials", JSON.stringify(initials));
     //   }
-
     localStorage.setItem("initials", JSON.stringify(loggedScore));
 });
+
 
 
 
