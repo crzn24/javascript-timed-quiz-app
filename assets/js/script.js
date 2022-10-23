@@ -233,7 +233,7 @@ function viewHighscores() {
     storedScores.textContent = previousScores;
 }
 
-
+/// When clicking button to view high scores ///
 highScores.addEventListener("click", function() {
     console.log("who got the high score?")
     viewHighscores();
@@ -243,5 +243,5 @@ highScores.addEventListener("click", function() {
 
 clearScoresBtn.addEventListener("click", function() {
     console.log("Delete!");
-    
+    localStorage.clear();
 });
