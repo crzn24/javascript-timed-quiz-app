@@ -208,6 +208,8 @@ clearScoresBtn.innerHTML = "Clear High Scores";
 var clearScoresEl = document.getElementById("clear-scores");
 var highScoresTitle = document.getElementById("highscore-title");
 
+var previousScores = JSON.parse(window.localStorage.getItem('loggedScore'));
+
 submitBtn.addEventListener("click", function(event) {
     event.preventDefault(event);
     console.log("i need scores");
@@ -226,16 +228,13 @@ submitBtn.addEventListener("click", function(event) {
     //     alert("You need to enter your initials.");
     //   } else {
     //     alert("Nice!");
-    
-    //     localStorage.setItem("initials", JSON.stringify(initials));
-    //   }
+   
     window.localStorage.setItem("loggedScore", JSON.stringify(loggedScore));
 });
 
 
 /// Retrieves previous high scores ///
 
-var previousScores = JSON.parse(window.localStorage.getItem('loggedScore'));
 
 function viewHighscores() {
     storedScores.textContent = previousScores;
