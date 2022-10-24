@@ -12,7 +12,7 @@ The logic of JavaScript makes sense in some areas but in others, I had to use ot
 ## Usage
 This project is a way to study questions about JavaScript through a timed quiz.
 
-[Link to application]()
+[Link to application](https://crzn24.github.io/javascript-timed-quiz-app/)
 
 
 
