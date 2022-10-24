@@ -221,27 +221,19 @@ submitBtn.addEventListener("click", function(event) {
     event.preventDefault(event);
     console.log("i need scores");
    
-    // if (initialsInput === "") {
-    //     return;
-    // }
 
     var loggedScore = {
         initials: initialsInput.value,
         highscore: score,
     }
 
-    
-    // if (initials === "") {
-    //     alert("You need to enter your initials.");
-    //   } else {
-    //     alert("Nice!");
    
     window.localStorage.setItem("loggedScore", JSON.stringify(loggedScore));
+    //display high scores next?
 });
 
 
 /// Retrieves previous high scores ///
-
 
 function viewHighscores() {
     storedScores.textContent = previousScores;
