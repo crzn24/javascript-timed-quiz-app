@@ -208,7 +208,14 @@ clearScoresBtn.innerHTML = "Clear High Scores";
 var clearScoresEl = document.getElementById("clear-scores");
 var highScoresTitle = document.getElementById("highscore-title");
 
+
+/// Array for previous high scores ///
+// var previousScores = [
+
+// ]
 var previousScores = JSON.parse(window.localStorage.getItem('loggedScore'));
+
+
 
 submitBtn.addEventListener("click", function(event) {
     event.preventDefault(event);
