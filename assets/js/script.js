@@ -177,6 +177,7 @@ function checkAnswer(selectedAnswer) {
     alert("You are done!");
     clearInterval(valId);
     displayMessage();
+    
   } else {
     currentQuestionIndex++;
     newQuestion();
@@ -218,7 +219,7 @@ var previousScores = JSON.parse(window.localStorage.getItem('loggedScore'));
 
 
 submitBtn.addEventListener("click", function(event) {
-    event.preventDefault(event);
+    event.preventDefault();
     console.log("i need scores");
    
 
@@ -226,9 +227,25 @@ submitBtn.addEventListener("click", function(event) {
         initials: initialsInput.value,
         highscore: score,
     }
+    
+    /**
+     *  [
+     *      {
+     *          "initials":"",
+     *          "hightscore": 15
+     *      }
+     * 
+     *      {}
+     *  ]
+     */
+    
+    var previous = window.localStorage.getItem("loggedScore");
 
-   
-    window.localStorage.setItem("loggedScore", JSON.stringify(loggedScore));
+    if (previous != undefined) {
+        var updatedScores = JSON.parse(previous);
+        updatedScores.push(score);
+        window.localStorage.setItem("loggedScore", JSON.stringify(loggedScore));
+    }
     //display high scores next?
 });
 
